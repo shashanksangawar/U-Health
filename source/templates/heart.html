@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Prediction System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="h-[auto] my-4">
+        <form method="post" enctype="multipart/form-data" class="form">
+            <div class="w-[70%] float-right">
+
+                <div class="border-b-4 border-light-gray-500 w-[35%] mt-4"></div>
+                    <div class="w-[30%] flex flex-col gap-6 my-4">
+                        
+                        <div class="flex flex-col">
+                            Patient's ID <input type="text" name="id" class="w-full" placeholder="Patient's ID">
+                        </div>
+
+                        <div class="flex flex-col">
+                            Patient's Name <input type="text" name="name" class="w-full" placeholder="Patient's Name">
+                        </div>
+
+                        <div class="flex flex-col">
+                            Patient's Age <input type="text" name="age" class="w-full" placeholder="Patient's Age"> 
+                        </div>
+
+                        <div class="flex flex-col">
+                            Patient's Gender 
+                            <select name="sex" class="w-full">
+                                <option value="1">Male</option>
+                                <option value="2">Female</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="border-b-4 border-light-gray-500 w-[35%] mt-4"></div>
+                    
+                    <div id="medical-records" class="w-[30%] flex flex-col gap-6 my-4">
+                        <div>
+                            Is there a pain in the chest? 
+                            <div class="flex flex-col">
+                                <div>
+                                    <input type="radio" id="true" name="chest_pain" value="1" />
+                                    <label for="true">True</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="false" name="chest_pain" value="0" />
+                                    <label for="false">False</label>
+                                </div>
+                            </div>                        
+                        </div>
+                        
+                        <div class="flex flex-col">
+                            Chest-Pain type:
+                            <select name="chest_pain_type" class="w-full">
+                                <option value="1">Asymptomatic</option>
+                                <option value="2">Atypical Angina</option>
+                                <option value="3">Non-Anginal</option>
+                                <option value="4">Typical Angina</option>
+                            </select>
+                        </div>
+
+                        <div class="flex flex-col">
+                            Blood-Pressure(mm/Hg) <input type="number" name="bp" class="w-full" placeholder="Patient's Resting Blood-Pressure"> 
+                        </div>
+                        
+                        <div class="flex flex-col">
+                            Cholestral(mg/dl) <input type="number" name="bp" class="w-full" placeholder="Patient's Resting Blood-Pressure"> 
+                        </div>
+
+                        <div class="flex flex-col">
+                            Blood-Sugar-Level(mg/dl) <input type="number" name="bp" class="w-full" placeholder="Patient's Resting Blood-Pressure"> 
+                        </div>
+
+                        <div class="flex flex-col">
+                            Pulse <input type="number" name="bp" class="w-full" placeholder="Patient's Resting Blood-Pressure"> 
+                        </div>
+
+                        <div class="flex flex-col">
+                            Electro-Cardiographic Results(ECG):
+                            <select name="ecg" class="w-full">
+                                <option value="1">Asymptomatic</option>
+                                <option value="2">Atypical Angina</option>
+                                <option value="3">Non-Anginal</option>
+                                <option value="4">Typical Angina</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="border-b-4 border-light-gray-500 w-[35%] mt-4"></div>
+                    
+                    <div id="advanced-medical-records" class="w-[30%] flex flex-col gap-6 my-4">                           
+                        
+                        <div class="flex flex-col">
+                            ST Depression:
+                            <select name="depression" class="w-full">
+                                <option value="1">Up-Sloping</option>
+                                <option value="2">Normal</option>
+                                <option value="3">Flat</option>
+                                <option value="4">Reversable Defect</option>
+                                <option value="5">Down-Sloping</option>
+                                <option value="6">Fixed Defect</option>
+                            </select>
+                        </div>
+
+                        <div class="flex flex-col">
+                            ST Slope:
+                            <select name="slope" class="w-full">
+                                <option value="1">Up-Sloping</option>
+                                <option value="2">Normal</option>
+                                <option value="3">Flat</option>
+                                <option value="4">Reversable Defect</option>
+                                <option value="5">Down-Sloping</option>
+                                <option value="6">Fixed Defect</option>
+                            </select>
+                        </div>
+
+
+                        <div class="flex flex-col">
+                            Number of Major Vessels (0-3) colored by Fluoroscopy
+                            <select name="slope" class="w-full">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <input type="submit" formaction="/api/heart_disease" value="Predict"
+                            class="sell bg-indigo-500 px-4 py-1 text-xl rounded">
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+<script>
+    function display_div() 
+    {
+        var medicalRecords = document.querySelector('#medical-records').classList.toggle('hidden');
+    }
+</script>
+</html>
