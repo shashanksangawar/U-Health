@@ -32,9 +32,9 @@ def ui_heart_disease():
 # --------------------------------
 # --------- Back-end ------------
 # --------------------------------
-@app.route('/api/heart_disease')
+@app.route('/api/heart_disease', methods=['POST'])
 def api_heart_disease():
-    return heart_prediction()
+    return heart_prediction(form=request.form)
 
 
 @app.route('/test')
