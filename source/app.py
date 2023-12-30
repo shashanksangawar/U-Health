@@ -3,6 +3,7 @@ from flask import Flask, render_template, request
 from flask_cors import CORS
 import os, secrets
 from supporting.heart import heart_prediction
+from supporting.cancer import cancer_prediction
 # Configuration for Flask App
 app = Flask(__name__)
 CORS(app)
@@ -28,6 +29,10 @@ def ui_main_page():
 def ui_heart_disease():
     return render_template('heart.html')
 
+# Breast Cancer Prediction
+@app.route('/breast_cancer')
+def ui_breast_cancer():
+    return render_template('cancer.html')
 
 # --------------------------------
 # --------- Back-end ------------
@@ -36,6 +41,9 @@ def ui_heart_disease():
 def api_heart_disease():
     return heart_prediction(form=request.form)
 
+@app.route('/api/breast_cancer', methods=['POST'])
+def api_breast_cancer():
+    return cancer_prediction(form=request.form)
 
 @app.route('/test')
 def test():
