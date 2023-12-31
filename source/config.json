@@ -3,7 +3,7 @@
         "Alzheimer": "../Models/alzheimer.sav",
         "Heart": "../Models/heart.sav",
         "Cancer": "../Models/breast_cancer.sav",
-        "Dengue": "../Models/dengue.sav",
+        "Dengue": "../Models/Dengue.sav",
         "Diabetes": "../Models/diabetes.sav"
     },
     "Datasets": {
